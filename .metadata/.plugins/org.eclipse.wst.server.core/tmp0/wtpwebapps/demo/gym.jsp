@@ -15,7 +15,8 @@ pageEncoding="UTF-8"%>
     <%@ include file="/common/bootstrap_common.jsp"%>
     <script>
       function getloc() {
-        //함수 넣어보기 & 버튼호버 및 이벤트처리(css)
+        const moveLatLon = new kakao.maps.LatLng(37.476773, 126.879959);
+        map.panTo(moveLatLon);
       }
     </script>
   </head>
