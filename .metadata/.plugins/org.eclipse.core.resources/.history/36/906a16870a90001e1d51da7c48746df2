@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Gym</title>
+    <%@include file="/common/bootstrap_common.jsp"%>
+  </head>
+  <body>
+<!-- ======================================== -->!>  	
+	<%@ include file = "/include/gym_header.jsp" %>
+<!-- ======================================== -->!>  	
+	카카오 맵
+<!-- ======================================== -->!>  	
+	<%@ include file = "/include/gym_footer.jsp" %>
+<!-- ======================================== -->!>  	
+  </body>
+</html>

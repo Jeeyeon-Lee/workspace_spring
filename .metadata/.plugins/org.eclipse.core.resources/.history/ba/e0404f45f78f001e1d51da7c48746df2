@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%!
+//디클러레이션 - 자바코드 사용 가능
+//전변, 메소드 선언 자리
+//인스턴스화 못 함 - 플랫폼 독립적이어서 서버마다 자바 클래스 이름의 명명규칙 다름 
+%>
+
+<%
+//스크립틀릿 - 자바코드 입력하는 공간
+//
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사원목록 - 프로시저</title>
+</head>
+<body>
+
+</body>
+</html>

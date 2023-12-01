@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page impor = "java.util.Map" %>
+<%!
+//디클러레이션 - 자바코드 사용 가능
+//전변, 메소드 선언 자리
+//인스턴스화 못 함 - 플랫폼 독립적이어서 서버마다 자바 클래스 이름의 명명규칙 다름 
+//공통코드, DB 연동하는 코드, 재사용성 고려한 메소드라면 XXX.java 
+%>
+
+
+<%
+//스크립틀릿 - 자바코드 입력하는 공간
+//지역변수 : service()코드가 생성되니까 메소드 안에서 선언한 변수이니까 
+//조회된 결과를 Map으로 가져올 예정임! 
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사원목록 - 프로시저</title>
+</head>
+<body>
+
+</body>
+</html>

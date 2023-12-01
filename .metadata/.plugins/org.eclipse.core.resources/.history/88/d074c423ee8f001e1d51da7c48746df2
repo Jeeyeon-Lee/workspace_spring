@@ -1,0 +1,55 @@
+package com.example.demo.ch5;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/hello")
+public class HelloServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public void init() throws ServletException {
+		//서블릿 초기화 -  서블릿이 생성 또는 리로딩때 단 한번한 수행됨
+		//서블릿이 초기화 될 때 자동 호출되는 메소드 - 개발자가 신경쓰지 않아도 된다
+		System.out.println("init호출");
+	}
+	//브라우저 새로고침을 누르면 service메소드만 호출되고 처리된다.
+	//호출될 때마다 반복적으로 수행됨
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
+		//service메소드 호출
+		System.out.println("service호출");
+//		redirect와 rezuestdispatcger의 차이?? 
+		
+//		res.sendRedirect("./index.jsp");
+//		요청이 계속 유지되는 것처럼 트릭을 쓸 수 있다. -> forward로 호출했기 때문에
+//		요청이 유지되는 것으로 판단?? 자바의 리스트를 JSP에서 사용할 수 있음. 
+		List<Map<String, Object>> list = new ArrayList<>();
+		Map<String, Object> rmap = new HashMap<>();
+		rmap.put("mem_id","kiwi");
+		rmap.put("mem_pw",123);
+		list.add(rmap);
+		req.setAttribute("list", list);
+		RequestDispatcher view = req.getRequestDispatcher("./index.jsp");
+		view.forward(req,res);
+	}
+	@Override
+	public void destroy() {
+		//서블릿이 제거될 때 단 한번만 수행됨
+	   //서블릿이 메모리에서 내려올 때
+	   //어플리케이션 종료
+	   //주석이라도 수정 후 저장하면 다시 리로딩
+		System.out.println("destroy호출");
+	}  
+}
