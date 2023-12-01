@@ -3,6 +3,5 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div class="navbar navbar-expand-sm bg-dark justify-content-center">
   <a class="navbar-brand" style="color: white" href="#"
-    >My Gym Copyright &copy 2023</a
-  >
+    >My Gym Copyright &copy 2023</a>
 </div>
