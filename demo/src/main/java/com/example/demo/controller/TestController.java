@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestController {
 	@GetMapping("testList")
 	public String testList() {
-		return "redirect:/test.jsp";
-//		return "forward:/test.jsp";
+		return "redirect:/test.jsp"; //새로고침
+//		return "forward:/test.jsp";  //새로고침 x 
 	}
 	
 }
