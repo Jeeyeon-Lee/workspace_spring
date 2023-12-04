@@ -1,2 +1,4 @@
 #Tomcat publish data
-#Sat Dec 02 01:13:50 KST 2023
+#Mon Dec 04 11:46:25 KST 2023
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\jeeye\\.gradle\\caches\\modules-2\\files-2.1\\org.springframework\\spring-web\\6.0.14\\ba2b2695f0db6985542240d49dff75315d8f8aff\\spring-web-6.0.14.jar=WEB-INF/lib/spring-web-6.0.14.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\jeeye\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.tomcat.embed\\tomcat-embed-jasper\\10.1.16\\de755f5676b03652e7a9664609aebd3c1d3b3d5a\\tomcat-embed-jasper-10.1.16.jar=WEB-INF/lib/tomcat-embed-jasper-10.1.16.jar
