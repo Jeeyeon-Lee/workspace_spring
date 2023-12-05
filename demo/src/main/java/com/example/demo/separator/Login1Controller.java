@@ -33,13 +33,13 @@ public class Login1Controller extends HttpServlet {
 		
 //		세션으로 해보기 
 		
-//		HttpSession session = req.getSession();
-//		session.setAttribute("smem_name", mem_name);
-//		res.sendRedirect("./index.jsp");
+		HttpSession session = req.getSession();
+		session.setAttribute("smem_name", mem_name);
+		res.sendRedirect("./index.jsp");
 		
 //		forward로 해보기
-		RequestDispatcher view = req.getRequestDispatcher("index.jsp");
-		view.forward(req,res);
+//		RequestDispatcher view = req.getRequestDispatcher("index.jsp");
+//		view.forward(req,res);
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -48,7 +48,7 @@ public class Login1Controller extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		doPost(req, res);
+		doService(req, res);
 	}
 	
 }

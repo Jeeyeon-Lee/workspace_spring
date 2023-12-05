@@ -30,7 +30,7 @@ public class HelloServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 		//service메소드 호출
 		System.out.println("service호출");
-//		redirect와 rezuestdispatcger의 차이?? 
+//		redirect와 getRequestDispatcher의 차이?? 
 //		비상태 프로토콜, url이 바뀌면 새로운 요청으로 인식한다 ?? 
 //		res.sendRedirect("./index.jsp");
 //		요청이 계속 유지되는 것처럼 트릭을 쓸 수 있다. -> forward로 호출했기 때문에
