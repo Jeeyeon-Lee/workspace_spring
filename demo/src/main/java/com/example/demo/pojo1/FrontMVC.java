@@ -34,7 +34,7 @@ public class FrontMVC extends HttpServlet {
 
 	protected void doService(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// http://localhost:8000/lecture/lectureDelete.gd
-		// 1. notice/noticeInsert.gd로 끊음.
+		// 1. notice/noticeInsert.gd로 끊음.(클라이언트의 요청 URL을 저장하는 변수)
 		String uri = req.getRequestURI();
 		logger.info(uri);
 		String context = req.getContextPath();
