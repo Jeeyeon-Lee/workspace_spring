@@ -85,7 +85,6 @@ public class FrontMVC extends HttpServlet {
 	// 해당 업무에 대응하는 컨트롤러 결정 페이지 이름 받아온다.
 	// 위에 결정된 true, false 값에 따라 sendRedirect와 forward를 통해 응답페이지 호출한다.
 
-	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

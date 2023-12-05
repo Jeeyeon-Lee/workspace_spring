@@ -27,8 +27,8 @@ import jakarta.servlet.http.HttpServletResponse;
 -post 방식 : 
 */
 @WebServlet("/mime/json.do")
-public class JSonServlet extends HttpServlet {
-	Logger logger = LoggerFactory.getLogger(JSonServlet.class);
+public class JSon1Servlet extends HttpServlet {
+	Logger logger = LoggerFactory.getLogger(JSon1Servlet.class);
 	private static final long serialVersionUID = 1L;
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -50,7 +50,7 @@ public class JSonServlet extends HttpServlet {
 		rmap.put("loc","경기");
 		list.add(rmap);
 		//키 = 값  -> 추후 다른 곳에서 비벼지기 어려움. 
-		out.print(list); //[{loc=경기, dname=운영부, deptno=30}]
+//		out.print(list); //[{loc=경기, dname=운영부, deptno=30}]
 
 		//temp까지 찍어서 값을 비교해봐야 함. 
 		//json으로 변경하여 내보낼 준비하기
