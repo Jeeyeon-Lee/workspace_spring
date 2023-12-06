@@ -32,6 +32,8 @@
 		<item key="expanded2" value="false"/>
 	</section>
 	<section name="completion_proposal_size">
+		<item key="size.x" value="418"/>
+		<item key="size.y" value="239"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
@@ -109,6 +111,7 @@
 		<item key="updateTextualMatches" value="false"/>
 		<item key="updateQualifiedNames" value="false"/>
 		<item key="patterns" value="*"/>
+		<item key="renameSubpackages" value="false"/>
 	</section>
 	<section name="DialogBounds_SuperInterfaceSelectionDialog">
 		<item key="DIALOG_X_ORIGIN" value="101"/>

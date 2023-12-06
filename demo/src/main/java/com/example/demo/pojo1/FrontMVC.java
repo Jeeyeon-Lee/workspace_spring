@@ -27,6 +27,7 @@ http://localhost:8000/member/memberList.gd   -> (조회)select - dispatcher(forw
 http://localhost:8000/lecture/lectureList.gd -> (조회)select - dispatcher(forward) -false
 http://localhost:8000/notice/noticeList.gd   -> (조회)select - dispatcher(forward) -false
 */
+//확장자가 gd로 끝나면 내가 관여할게! 
 @WebServlet("*.gd")
 public class FrontMVC extends HttpServlet {
 	Logger logger = LoggerFactory.getLogger(FrontMVC.class);
@@ -35,19 +36,30 @@ public class FrontMVC extends HttpServlet {
 	protected void doService(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// http://localhost:8000/lecture/lectureDelete.gd
 		// 1. notice/noticeInsert.gd로 끊음.(클라이언트의 요청 URL을 저장하는 변수)
+		logger.info("doService");
 		String uri = req.getRequestURI();
+		/*{/notice/noticeInsert.gd}*/
 		logger.info(uri);
+		/*{}*/
 		String context = req.getContextPath();
+		logger.info(context);
 		// 2. 두번째 문자열부터 짤라오기 notice/noticeInsert.gd가 남음
 		String command = uri.substring(context.length() + 1);
+		// notice/noticeInsert.gd
+		/*{notice/noticeInsert.gd}*/
+		logger.info(command);
 		// 3. 의미없는 gd 잘라내기
 		// 3-1. 점이 있는 위치를 가져와서 end 변수에 대입
 		int end = command.lastIndexOf(".");
+		/*{19}*/
+		logger.info(""+end);
 		// 3-2. end 전까지의 문자열로 잘라내기
 		command = command.substring(0, end);
+		/*{notice/noticeInsert}*/
+		logger.info(command);
 		String upmu[] = null;
 		// 4.토크나이저로 나누기
-		upmu = command.split("/");
+		upmu = command.split("/"); /*{notice}{noticeInsert}*/
 
 		// 5.나눠진 URL 확인하기
 		for (String name : upmu) {
@@ -57,7 +69,7 @@ public class FrontMVC extends HttpServlet {
 		// ActionForward 받아오기 -> 변수(path, isRedirect)
 		ActionForward af = null;
 		// Controller 생성 -> res, req 받을 수 있게 됨.
-		NoticeController nc = new NoticeController();
+		NoticeController nc = new NoticeController(); //결합도가 높은 인스턴스화(별로, 제어역전아님)
 //		LectureController lc = new LectureController();
 //		MemberController  mc = new MemberController();
 		/* 어떤 컨트롤러 태울 것인가? */
@@ -88,12 +100,30 @@ public class FrontMVC extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		logger.info("doPost-가져올 때");
 		doService(req, res);
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		logger.info("doGet-가져올 때");
 		doService(req, res);
 	}
 
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		logger.info("doDelete-삭제할 때");
+		String n_no = req.getParameter("n_no");
+		logger.info(n_no);
+	}
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		logger.info("doPut-수정할 때");
+		String n_title = req.getParameter("n_title");
+		String n_content = req.getParameter("n_content");
+		String n_no = req.getParameter("n_no");
+		String n_writer = req.getParameter("n_writer");
+		logger.info(n_no+", "+n_title+", "+n_content+", "+n_writer);
+	}
 }
+
