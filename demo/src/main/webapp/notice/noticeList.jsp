@@ -15,6 +15,7 @@
     <title>공지사항{webapp}</title>
 </head>
 <body>
+   	<h2>공지사항 - 게시판</h2>
     <!-- 공지사항 목록 처리할 코드 작성해 보기 -->
     <input type="button" value="조회"/>
 </body>
