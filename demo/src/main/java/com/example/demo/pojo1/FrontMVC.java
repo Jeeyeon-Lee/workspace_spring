@@ -32,30 +32,30 @@ http://localhost:8000/notice/noticeList.gd   -> (조회)select - dispatcher(forw
 public class FrontMVC extends HttpServlet {
 	Logger logger = LoggerFactory.getLogger(FrontMVC.class);
 	private static final long serialVersionUID = 1L;
-
+	
 	protected void doService(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// http://localhost:8000/lecture/lectureDelete.gd
 		// 1. notice/noticeInsert.gd로 끊음.(클라이언트의 요청 URL을 저장하는 변수)
 		logger.info("doService");
 		String uri = req.getRequestURI();
-		/*{/notice/noticeInsert.gd}*/
+		//{/notice/noticeInsert.gd}
 		logger.info(uri);
-		/*{}*/
+		//*{}*/
 		String context = req.getContextPath();
 		logger.info(context);
 		// 2. 두번째 문자열부터 짤라오기 notice/noticeInsert.gd가 남음
 		String command = uri.substring(context.length() + 1);
 		// notice/noticeInsert.gd
-		/*{notice/noticeInsert.gd}*/
+		//*{notice/noticeInsert.gd}*/
 		logger.info(command);
 		// 3. 의미없는 gd 잘라내기
 		// 3-1. 점이 있는 위치를 가져와서 end 변수에 대입
 		int end = command.lastIndexOf(".");
-		/*{19}*/
+		//*{19}*/
 		logger.info(""+end);
 		// 3-2. end 전까지의 문자열로 잘라내기
 		command = command.substring(0, end);
-		/*{notice/noticeInsert}*/
+		//*{notice/noticeInsert}*/
 		logger.info(command);
 		String upmu[] = null;
 		// 4.토크나이저로 나누기
@@ -66,18 +66,20 @@ public class FrontMVC extends HttpServlet {
 			logger.info(name);
 		}
 
+		/* 결합도가 높은 설계 - 제어역전 아니다 */
 		// ActionForward 받아오기 -> 변수(path, isRedirect)
 		ActionForward af = null;
 		// Controller 생성 -> res, req 받을 수 있게 됨.
 		NoticeController nc = new NoticeController(); //결합도가 높은 인스턴스화(별로, 제어역전아님)
 //		LectureController lc = new LectureController();
 //		MemberController  mc = new MemberController();
+		
 		/* 어떤 컨트롤러 태울 것인가? */
 		// 이 지점은 내려가는 방향이다. (컨트롤러 요청 지점)
 		if ("notice".equals(upmu[0])) {
 			req.setAttribute("upmu", upmu); // 원본이 넘어감(배열 주소번지 넘김, 들어간 값 사용 가능)
 			// NpticeController로 넘어가게 됨 - upmu[1] 메소드 이름이니까?!
-			af = nc.execute(req, res);
+			af = nc.execute(req, res); //보내고, nc에서 한 걸 여기에 담아서 옴 
 		}
 		// 이 지점은 java와 오라클서버를 경유한 뒤 시점이다.
 		if (af != null) {
@@ -115,6 +117,7 @@ public class FrontMVC extends HttpServlet {
 		logger.info("doDelete-삭제할 때");
 		String n_no = req.getParameter("n_no");
 		logger.info(n_no);
+		doService(req, res);
 	}
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -124,6 +127,7 @@ public class FrontMVC extends HttpServlet {
 		String n_no = req.getParameter("n_no");
 		String n_writer = req.getParameter("n_writer");
 		logger.info(n_no+", "+n_title+", "+n_content+", "+n_writer);
+		doService(req, res);
 	}
 }
 

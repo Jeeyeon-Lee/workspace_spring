@@ -13,11 +13,11 @@ public class MyBatisCommonFactory {
 	public static SqlSessionFactory sqlSessionFactory = null;
 	public static void init() {
 		try {
-			String resource = "com/mybatis/MapperConfig.xml";
+			String resource = "com/mybatis/MapperConfig.xml";//드라이버클래스,ip,port,계정
 			Reader reader = null;
 			reader = Resources.getResourceAsReader(resource);
 			if(sqlSessionFactory == null) {
-				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader, "development");
+				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader, "mygym");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
