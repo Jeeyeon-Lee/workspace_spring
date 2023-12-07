@@ -7,7 +7,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mybatis.mapper.MyBatisCommonFactory;
+import com.util.MyBatisCommonFactory;
+
+
 
 public class TestDao{
 	Logger logger = LoggerFactory.getLogger(TestDao.class);

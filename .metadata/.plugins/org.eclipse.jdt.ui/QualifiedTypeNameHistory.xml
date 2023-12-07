@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="java.lang.Class"/>
     <fullyQualifiedTypeName name="java.text.DateFormat.Field"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Field"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Method"/>
@@ -23,11 +21,9 @@
     <fullyQualifiedTypeName name="com.practice1.demo.ch6.JSon1Servlet"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="com.google.gson.Gson"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
     <fullyQualifiedTypeName name="com.practice1.demo.ch6.JSon3Servlet"/>
     <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="com.practice1.demo.pojo1.ActionForward"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="com.practice1.demo.pojo1.FrontMVC"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.lang.Enum"/>
@@ -50,14 +46,18 @@
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="com.practice.pojo1.Action1"/>
     <fullyQualifiedTypeName name="com.practice.pojo1.ActionForward1"/>
-    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
-    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.Enumeration"/>
-    <fullyQualifiedTypeName name="com.example.demo.pojo1.FrontMVC"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="com.util.HashMapBinder"/>
     <fullyQualifiedTypeName name="com.mybatis.mapper.MyBatisCommonFactory"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+    <fullyQualifiedTypeName name="com.util.MyBatisCommonFactory"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="com.example.demo.pojo1.FrontMVC"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
 </qualifiedTypeNameHistroy>

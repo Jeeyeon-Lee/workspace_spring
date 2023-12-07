@@ -81,6 +81,13 @@ public class FrontMVC extends HttpServlet {
 			// NpticeController로 넘어가게 됨 - upmu[1] 메소드 이름이니까?!
 			af = nc.execute(req, res); //보내고, nc에서 한 걸 여기에 담아서 옴 
 		}
+
+		else if("member".equals(upmu[0])) {
+			
+		}
+		else if("lecture".equals(upmu[0])) {
+			
+		}
 		// 이 지점은 java와 오라클서버를 경유한 뒤 시점이다.
 		if (af != null) {
 			// 너 수정했니?삭제했니?입력했니?조회햇니? => redirect
@@ -99,13 +106,6 @@ public class FrontMVC extends HttpServlet {
 	// 해당 업무에 대응하는 컨트롤러 결정 페이지 이름 받아온다.
 	// 위에 결정된 true, false 값에 따라 sendRedirect와 forward를 통해 응답페이지 호출한다.
 
-
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		logger.info("doPost-가져올 때");
-		doService(req, res);
-	}
-
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		logger.info("doGet-가져올 때");
@@ -113,21 +113,28 @@ public class FrontMVC extends HttpServlet {
 	}
 
 	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		logger.info("doDelete-삭제할 때");
-		String n_no = req.getParameter("n_no");
-		logger.info(n_no);
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		logger.info("doPost-가져올 때");
 		doService(req, res);
+	}
+
+
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		logger.info("doDelete- 삭제할때");
+		String n_no = req.getParameter("n_no");
+		logger.info(n_no);		
+		doService(req,res);
 	}
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		logger.info("doPut-수정할 때");
+		logger.info("doPut- 수정할때");
+		String n_no = req.getParameter("n_no");
 		String n_title = req.getParameter("n_title");
 		String n_content = req.getParameter("n_content");
-		String n_no = req.getParameter("n_no");
 		String n_writer = req.getParameter("n_writer");
 		logger.info(n_no+", "+n_title+", "+n_content+", "+n_writer);
-		doService(req, res);
+		doService(req,res);
 	}
 }
 

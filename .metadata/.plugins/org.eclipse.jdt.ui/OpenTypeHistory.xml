@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
     <typeInfo handle="=demo/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.example.demo.pojo1{Action.java[Action" modifiers="513" timestamp="1701786202552"/>
-    <typeInfo handle="=demo/C:\/Users\/jeeye\/.gradle\/caches\/modules-2\/files-2.1\/org.apache.tomcat.embed\/tomcat-embed-core\/10.1.16\/176162fb3998856a90436826034ffe5d25beaeb9\/tomcat-embed-core-10.1.16.jar=/gradle_used_by_scope=/=/=/org.eclipse.jst.component.nondependency=/=/&lt;jakarta.servlet.http(HttpServlet.class[HttpServlet" modifiers="1057" timestamp="1701430899738"/>
-    <typeInfo handle="=demo/C:\/Users\/jeeye\/.gradle\/caches\/modules-2\/files-2.1\/ch.qos.logback\/logback-core\/1.4.11\/2f9f280219a9922a74200eaf7138c4c17fb87c0f\/logback-core-1.4.11.jar=/gradle_used_by_scope=/=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/&lt;ch.qos.logback.core.joran.action(Action.class[Action" modifiers="1057" timestamp="1701430901459"/>
 </typeInfoHistroy>
