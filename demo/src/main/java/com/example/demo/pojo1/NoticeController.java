@@ -52,6 +52,17 @@ public class NoticeController implements Action {
 			path.append("noticeList.jsp");
 			isRedirect = false;//false이면 forward처리됨
 		}
+		else if("procNoticeList".equals(upmu[1])) {//select
+			logger.info("procNoticeList");
+			List<Map<String ,Object>> nList = null;//nList.size()가 n개 
+			// NoticeLogic의 메소드 호출 - 객체주입 - 내가(책임) 아님 스프링(제어역전)
+			hmb.bind(pMap);
+			nList = nLogic.procNoticeList(pMap);
+			//원본에다가 담아 두자
+			req.setAttribute("nList", nList);
+			path.append("noticeList.jsp");
+			isRedirect = false;//false이면 forward처리됨
+		}
 		//myBatis는 동적쿼리를 지원해서 전체조회와 한건조회를 같은 메소드를 사용해도 
 		//되지만 굳이 나누는 이유는 유지보수를 위해서 나눈다
 		//같은 메소드를 호출하지만 그 응답페이지 이름이 달라서... 그렇다

@@ -9,6 +9,12 @@ public class EmpVO {
 	private double sal      =0.0;// 
 	private int       comm     =0;// 	
 	private int       deptno   =0;// 	
+	public EmpVO(int i) {
+		// TODO Auto-generated constructor stub
+	}
+	public EmpVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getEmpno() {
 		return empno;
 	}

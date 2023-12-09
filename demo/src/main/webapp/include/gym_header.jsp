@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
           <a class="nav-link" href="#">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="/notice/noticeList">공지사항</a>
+          <a class="nav-link active" href="/notice/noticeList.gd">공지사항</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">회원관리</a>

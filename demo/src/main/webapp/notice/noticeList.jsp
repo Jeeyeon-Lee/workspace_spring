@@ -22,19 +22,23 @@ pageEncoding="UTF-8"%> <%@ page import="java.util.*" %> <%
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>공지사항{webapp}</title>
         <%@ include file="/common/bootstrap_common.jsp" %>
-        <link rel="stylesheet" href="/css/notice.css" />
+        <link rel="stylesheet" href="/css/notice.css">
         <script type="text/javascript">
           function searchEnter() {
-            console.log("searchEnter");
+            console.log('searchEnter');
           }
           function noticeSearch() {
             console.log("noticeSearch");
+            const gubun = document.querySelector("#gubun").value;
+            const keyword = document.querySelector("#keyword").value;
+            console.log(`${gubun},${keyword}`);
+            location.href="/notice/noticeList.gd?gubun="+gubun+"&keyword="+keyword;
           }
         </script>
       </head>
       <body>
-        <!-- 공지사항 목록 처리할 코드 작성해 보기 -->
-
+        <!-- 공지사항 목록 처리할 코드 작성해 보기 디렉티브 방식 - jsp에 포함된다. 하나다.-->
+		<%@ include file = "/include/gym_header.jsp" %>
         <div class="container">
           <div class="page-header">
             <h2>공지사항 <small>공지목록</small></h2>
@@ -85,6 +89,11 @@ pageEncoding="UTF-8"%> <%@ page import="java.util.*" %> <%
               </thead>
               <tbody>
 <% //스크립틀릿 - 지변이다, 이곳은 메소드선언, 생성자 선언 불가!
+	//result type = map -> 한 행 씩 가져옴 
+	//selectList 는 pMap으로 담아서 넘겼기 때문
+	//따라서 n건을 조회하는 경우이지만 result type은 map이나 vo 패턴을 주는게 맞음.
+	//vo패턴 getter&setter 
+	//주의사항 : 자동으로 키값을 생성하니까 디폴트가 키값은 반드시 대문자!! 
    for(int i=0;i<size;i++){
 	   Map<String, Object> rmap = nList.get(i);
    
@@ -101,9 +110,10 @@ pageEncoding="UTF-8"%> <%@ page import="java.util.*" %> <%
             </table>
 
             <!-- [[ 페이징 처리  구간  ]] -->
-
+			<div style="display:flex; justify-content:center">
+				<ul class="pagination">[1][2][3]</ul>
+			</div>
             <!-- [[ 페이징 처리  구간  ]] -->
-
             <div class="notice-footer">
               <button class="btn btn-warning" onclick="noticeList()">
                 전체조회</button
@@ -122,7 +132,7 @@ pageEncoding="UTF-8"%> <%@ page import="java.util.*" %> <%
         </div>
         <!-- body end       -->
         <!-- footer start -->
-
+        <%@include file = "/include/gym_footer.jsp" %>
         <!-- footer end    -->
         <!-- ========================== [[ 공지사항 Modal ]] ========================== -->
         <div class="modal" id="noticeForm">

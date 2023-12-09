@@ -35,6 +35,21 @@ public class NoticeLogic {
 		}
 		return nList;
 	}
+	public List<Map<String, Object>> procNoticeList(Map<String,Object>pMap){
+		logger.info("procNoticeList");
+		logger.info(pMap.toString());
+		List<Map<String,Object>> nList = new ArrayList<>();
+		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		//예외 처리를 위한 try-catch 반드시 사용
+		try {
+			nList = sqlSession.selectList("proc_noticeList",pMap);
+			logger.info(pMap.toString());
+		} catch (Exception e) {
+			logger.info(e.toString());
+		}
+		return nList;
+	}
 	public int noticeInsert(Map<String, Object> pMap){
 		logger.info("noticeInsert");
 		int result = 0;
