@@ -1,11 +1,8 @@
 package com.vo;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 //@Getter //get메소드와 set메소드를 생성할 필요없이 어노테이션을 쓰면 사용이 가능하다. 
 //@Setter
@@ -25,5 +22,4 @@ public class NoticeVO {
 		this.n_content = n_content;
 		this.n_writer = n_writer;
 	}
-	
 }

@@ -90,11 +90,11 @@ public class FrontMVC extends HttpServlet {
 		}
 		// 이 지점은 java와 오라클서버를 경유한 뒤 시점이다.
 		if (af != null) {
-			// 너 수정했니?삭제했니?입력했니?조회햇니? => redirect
+			// 너 수정했니?삭제했니?입력했니? => redirect
 			if (af.isRedirect()) {
 				res.sendRedirect(af.getPath());
 			}
-			// 너 안햇니? => forward
+			// 너 조회했니? => forward
 			else {
 				RequestDispatcher view = req.getRequestDispatcher(af.getPath());
 				view.forward(req, res);
